@@ -1,8 +1,12 @@
+//public/src/components/app.vue
 <template>
   <div id="app">
-    <div class="container">
-      <div class="row col-md-6 offset-md-3">
+    <div class="container todo">
+      <div class="todo-section">
         <create-todo></create-todo>
+      </div>
+      <br>
+      <div class="todo-section">
         <list-todo></list-todo>
       </div>
     </div>
@@ -11,14 +15,14 @@
 
 
 <script>
-  import CreateTodo from './createtodo.vue';
-  import ListTodo from './listtodo.vue';
+  import createTodo from './createtodo.vue';
+  import listTodo from './listtodo.vue';
   export default {
     name: 'app',
     data() {
       return {}
     },
-    components: {CreateTodo,  ListTodo},
+    components: {createTodo,  listTodo},
   }
 </script>
 <style>
@@ -30,4 +34,4 @@
   .fade-leave-active {
     opacity: 0
   }
-</style>
+  </style>

@@ -1,12 +1,13 @@
-//public/src/components/CreateTodo.vue
+//public/src/components/createTodo.vue
 
 <template>
-  <div>
-    <h2>Create a Todo List</h2>
+  <div class="create-todo-div">
+    <h2>Add Todo Item</h2>
     <form @submit.prevent>
       <div class="form-group">
-        <input type="text" class="form-control" @keypress="typing=true" placeholder="What do you want to do?" v-model="todo" @keyup.enter="addTodo($event)">
+        <input type="text" class="create-todo-input" @keypress="typing=true" placeholder="Start a wonderful day!" v-model="todo" @keyup.enter="addTodo($event)">
         <span class="help-block small text-center" v-show="typing">Hit enter to save</span>
+        <br>
       </div>
     </form>
   </div>
