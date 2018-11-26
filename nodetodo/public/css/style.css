@@ -1,0 +1,108 @@
+.section {
+    max-width: 50%;
+    margin: auto;
+    color:darkslategrey;
+  }
+
+.mrt-20{
+  margin-top: 20px;
+}
+h2 {
+  padding-top: 30px;
+}
+
+.btn-lg, .input-lg, {
+    font-size: 35px;
+}
+
+.input-lg {
+    font-size: 35px;
+}
+
+.checkbox label:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.checkbox .cr {
+    position: relative;
+    display: inline-block;
+    border: 1px solid #a9a9a9;
+    border-radius: .25em;
+    width: 1.3em;
+    height: 1.3em;
+    float: left;
+    margin-right: .5em;
+}
+
+.checkbox .cr .cr-icon {
+    position: absolute;
+    font-size: .8em;
+    line-height: 0;
+    top: 50%;
+    left: 15%;
+}
+
+.checkbox label input[type="checkbox"] {
+    display: none;
+}
+
+.checkbox label input[type="checkbox"]+.cr>.cr-icon {
+    opacity: 0;
+}
+
+.checkbox label input[type="checkbox"]:checked+.cr>.cr-icon {
+    opacity: 1;
+}
+
+.todo {
+    padding: 10px;
+  }
+  .todo-section {     
+      max-width: 100%;
+      width: 300px;
+      margin: auto;
+  }
+
+  .mrt-20{
+    margin-top: 20px;
+  }
+
+  .create-todo-div h2 {
+    padding-top: 30px;
+    padding-bottom: 20px;
+    color: green;
+  }
+
+  .list-todo-div h4 {
+    padding-bottom: 30px;
+    color: darkslategray;
+  }
+
+  .list-todo-div .input-lg {
+      font-size: 20px !important;
+      margin: 0px 20px 0px 20px !important;
+      background-color: #eee;
+      color: #000;
+      border-radius: 0.25em;
+  }
+  .create-todo-input{
+    width: 265px;
+    max-width: 100%;
+    background-color: lightgreen;
+    border: 1px solid black;
+    color: #000;
+    border-radius: 0.25em;
+    font-size: 20px !important;
+    padding: 10px;
+    margin-left: 15px;
+  }
+
+  .create-todo-div{
+    border-bottom: 3px dotted green;
+    padding-bottom: 20px;
+  }
+  .help-block{
+      margin-left: 15px;
+  }
