@@ -6,9 +6,9 @@
             <h4>Your Todo List</h4>
             <div class="row mrb-10" v-for="todo in todos">
                 <div class="input-group m-b-5">
-                    <span class="input-group-addon addon-right"><input class="checkbox cr" type="checkbox" v-model="todo.done" :checked="todo.done" :value="todo.done" v-on:change="updateTodo(todo)" title="Mark as done?"/></span>
+                    <span><input class="checkbox cr" type="checkbox" v-model="todo.done" :checked="todo.done" :value="todo.done" v-on:change="updateTodo(todo)" title="Mark as done?"/></span>
                     <input type="text" class="form-control input-lg" :class="todo.done?'todo__done':''" v-model="todo.name" @keypress="todo.editing=true" @keyup.enter="updateTodo(todo)">
-                    <span class="input-group-addon addon-left glyphicon glyphicon-remove" title="Delete todo?" v-on:click="deleteTodo(todo._id)">X</span>
+                    <span class="glyphicon glyphicon-remove" title="Delete todo?" v-on:click="deleteTodo(todo._id)"></span>
                 </div>
                 <span class="help-block small" v-show="todo.editing">Hit enter to update</span>
             </div>
