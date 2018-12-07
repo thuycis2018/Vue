@@ -1,9 +1,9 @@
-//public/src/components/listTodo.vue
+//public/src/components/listtodo.vue
 
 <template>
     <div class="list-todo-div">
         <div class="well well-lg" v-show="todos.length>0">
-            <h4>Your Todo List</h4>
+            <h4>Your List</h4>
             <div class="row mrb-10" v-for="todo in todos">
                 <div class="input-group m-b-5">
                     <span><input class="checkbox cr" type="checkbox" v-model="todo.done" :checked="todo.done" :value="todo.done" v-on:change="updateTodo(todo)" title="Mark as done?"/></span>
@@ -17,7 +17,7 @@
             <p class="alert alert-info">
               <strong>All Caught Up</strong>
             <br/>
-            You do not have any todo items</p>
+            You do not have any items</p>
         </div>
     </div>
 </template>
@@ -38,14 +38,14 @@
         },
         methods: {
             fetchTodo() {
-                let uri = 'http://localhost:1338/api/all';
+                let uri = '/api/all';
                 axios.get(uri).then((response) => {
                     this.todos = response.data;
                 });
             },
             updateTodo(todo) {
                 let id = todo._id;
-                let uri = 'http://localhost:1338/api/update/' + id;
+                let uri = '/api/update/' + id;
                 todo.editing = false;
                 axios.post(uri, todo).then((response) => {
                     console.log(response);
@@ -54,7 +54,7 @@
                 })
             },
             deleteTodo(id) { //delete todo item
-                let uri = 'http://localhost:1338/api/delete/' + id;
+                let uri = '/api/delete/' + id;
                 axios.get(uri);
                 this.fetchTodo();
             },

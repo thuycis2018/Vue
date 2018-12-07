@@ -1,8 +1,8 @@
-//public/src/components/createTodo.vue
+//public/src/components/createtodo.vue
 
 <template>
   <div class="create-todo-div">
-    <h2>Add Todo Item</h2>
+    <h2>To Do</h2>
     <form @submit.prevent>
       <div class="form-group">
         <input type="text" class="create-todo-input" @keypress="typing=true" placeholder="Start a wonderful day!" v-model="todo" @keyup.enter="addTodo($event)">
@@ -27,7 +27,7 @@
     methods: {
       addTodo(event) {
         if (event) event.preventDefault();
-        let url = 'http://localhost:1338/api/add';
+        let url = '/api/add';
         let param = {
           name: this.todo,
           done: 0

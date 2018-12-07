@@ -3,7 +3,7 @@ h2 {
   padding-top: 30px;
 }
 
-.todo {
+.item, .todo {
     border: 2px solid #ccc;
     margin-top: 10px;
     width: 500px !important;
@@ -12,7 +12,7 @@ h2 {
     padding: 10px;
 }
 
-.todo-section {     
+.item-section, .todo-section {     
     max-width: 100%;
     width: 450px;
     margin: auto;
@@ -22,20 +22,20 @@ h2 {
 margin-top: 20px;
 }
 
-.create-todo-div h2 {
+.create-item-div h2, .create-todo-div h2 {
     padding-top: 30px;
     padding-bottom: 20px;
-    color: green;
+    color:green;
     font-size: 35px;
 }
 
-.list-todo-div h4 {
+.list-item-div h4, .list-todo-div h4 {
 padding-bottom: 30px;
 color: darkslategray;
 font-size: 20px;
 }
 
-.list-todo-div .input-lg {
+.list-item-div .input-lg, .list-todo-div .input-lg {
     font-size: 20px !important;
     margin: 0px 20px 0px 20px !important;
     background-color: #fff;
@@ -43,10 +43,10 @@ font-size: 20px;
     border-radius: 0.25em;
 }
 
-.create-todo-input{
+.create-item-input, .create-todo-input{
     width: 450px;
     max-width: 100%;
-    background-color: lightgreen;
+    background-color: #eee;
     border: 1px solid black;
     color: #000;
     border-radius: 0.25em;
@@ -54,7 +54,7 @@ font-size: 20px;
     padding: 10px;
 }
 
-.create-todo-div{
+.create-item-div, .create-todo-div{
     padding-bottom: 20px;
 }
 

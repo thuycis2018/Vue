@@ -1,13 +1,13 @@
 'use strict'
 
 var express = require('express')
-
+// share the same Router
 var todoRoutes = express.Router()
 
+// pull data from todos collection
 var todo = require('./todo')
 
 // get all todos in the db
-
 todoRoutes.route('/all').get(function (req, res, next) {
   //  res.send('todoRoutes all');
   todo.find(function (err, todos) {
@@ -70,4 +70,74 @@ todoRoutes.route('/update/:id').post(function (req, res, next) {
   })
 })
 
+
+// pull data from items collection
+var item = require('./item')
+
+
+// get all items in the db
+
+todoRoutes.route('/allitems').get(function (req, res, next) {
+  //  res.send('todoRoutes all');
+  item.find(function (err, items) {
+    if (err) {
+        console.log(err)
+      return next(new Error(err))
+    }
+    res.json(items) // return all items
+  })
+})
+
+// create an item
+todoRoutes.route('/additem').post(function (req, res) {
+  item.create(
+    {
+      name: req.body.name,
+      done: false
+    },
+    function (error, item) {
+      if (error) {
+        res.status(400).send('Unable to create an item')
+      }
+      res.status(200).json(item)
+    }
+  )
+})
+
+// delete an item
+
+todoRoutes.route('/deleteitem/:id').get(function (req, res, next) {
+  var id = req.params.id
+  item.findByIdAndRemove(id, function (err, item) {
+    if (err) {
+      return next(new Error('Item was not found'))
+    }
+    res.json('Successfully removed')
+  })
+})
+
+// perform update on an item
+
+todoRoutes.route('/updateitem/:id').post(function (req, res, next) {
+  var id = req.params.id
+  item.findById(id, function (error, item) {
+    if (error) {
+      return next(new Error('Item was not found'))
+    } else {
+      item.name = req.body.name
+      item.done = req.body.done
+      item.save(
+        function (error, item) {
+          if (error) {
+            res.status(400).send('Unable to update item')
+          } else {
+            res.status(200).json(item)
+          }
+        }
+      )
+    }
+  })
+})
+
+// share the same routes for todo and item
 module.exports = todoRoutes
