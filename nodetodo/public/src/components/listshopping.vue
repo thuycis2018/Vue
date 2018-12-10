@@ -6,7 +6,7 @@
             <h4>Your Shopping List</h4>
             <div class="row mrb-10" v-for="(item,index) in items" :key="index">
                 <div class="input-group m-b-5">
-                    <span><input class="checkbox cr" type="checkbox" v-model="item.done" :checked="item.done" :value="item.done" v-on:change="updateItem(item)" title="Mark as done?"/></span>
+                    <span><input class="squaredTwo checkbox cr" type="checkbox" v-model="item.done" :checked="item.done" :value="item.done" v-on:change="updateItem(item)" title="Mark as done?"/></span>
                     <input type="text" class="form-control input-lg" :class="item.done?'item__done':''" v-model="item.name" @keypress="item.editing=true" @keyup.enter="updateItem(item)">
                     <span class="glyphicon glyphicon-remove" title="Delete item?" v-on:click="deleteItem(item._id)"></span>
                 </div>
@@ -64,3 +64,13 @@
         }
     }
 </script>
+<style>
+.squaredTwo {
+  width: 25px;
+  height: 25px;
+  position: relative;
+  margin: 0px auto !important;
+  background: #fcfff4;
+  box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+}
+</style>
