@@ -4,7 +4,7 @@
     <div class="list-todo-div">
         <div class="well well-lg" v-show="todos.length>0">
             <h4>Your List</h4>
-            <div class="row mrb-10" v-for="todo in todos">
+            <div class="row mrb-10" v-for="(todo,index) in todos" :key="index">
                 <div class="input-group m-b-5">
                     <span><input class="checkbox cr" type="checkbox" v-model="todo.done" :checked="todo.done" :value="todo.done" v-on:change="updateTodo(todo)" title="Mark as done?"/></span>
                     <input type="text" class="form-control input-lg" :class="todo.done?'todo__done':''" v-model="todo.name" @keypress="todo.editing=true" @keyup.enter="updateTodo(todo)">
