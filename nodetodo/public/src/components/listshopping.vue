@@ -64,28 +64,3 @@
         }
     }
 </script>
-<style scoped>
-    .delete__icon {}
-    .item__done {
-        text-decoration: line-through !important
-    }
-    .no_border_left_right {
-        border-left: 0px;
-        border-right: 0px;
-    }
-    .flat_form {
-        border-radius: 0px;
-    }
-    .mrb-10 {
-        margin-bottom: 10px;
-    }
-    .addon-left {
-        background-color: none !important;
-        border-left: 0px !important;
-        cursor: pointer !important;
-    }
-    .addon-right {
-        background-color: none !important;
-        border-right: 0px !important;
-    }
-</style>

@@ -57,3 +57,11 @@ app.use(function (req, res, next) {
 app.get('/', function (req, res, next) {
   res.sendfile('./public/index.html')
 })
+// additional pages pointing to index.html - for GET/refresh page request
+app.get('/shoppinglist', function (req, res, next) {
+  res.sendfile('./public/index.html')
+})
+
+app.get('/todolist', function (req, res, next) {
+  res.sendfile('./public/index.html')
+})

@@ -18,6 +18,10 @@ h2 {
     margin: auto;
 }
 
+div.row.mrb-10 {
+    padding-bottom: 20px;
+}
+
 .mrt-20{
 margin-top: 20px;
 }
